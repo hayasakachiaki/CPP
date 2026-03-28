@@ -1,0 +1,36 @@
+CPPはCにオブジェクト指向の概念を加えた言語
+
+Class
+
+CPPにはClassという概念が存在する
+Cにおいての構造体の役割を担う
+Classにはprivate public protectedの3つの属性を持つ変数　または関数を持つことができる
+privateはそのクラス自体で呼び出すことができる
+publicはそのクラス以外でも呼び出すことができる
+protectedはprivateに似た性質を持つが　継承する際にprotectedの変数は干渉されない
+private変数はメンバ変数とも呼ばれ　今回はメンバ変数と通常の変数の見分けをつけやすくするためアンダーバーを先頭につける
+
+Polymorphism
+
+Polymorphismとは継承と呼ばれるCPP独自のClassを引き継ぐ手法
+この継承というシステムがCPPをCPPたらしめている
+一度Classを作ってしまえばそのClassを継承することで全く同じものを再現できる
+また　そのClassの元の性質に加え　独自に変数　関数を追加できる
+注意すべき点としては上で説明したprotected変数を利用しないと継承元のClassに影響を及ぼしてしまう可能性があること
+
+Orthodox Canonical Form
+
+CPP独自の概念として上のOrthodoxCanonicalFormという書式が存在する
+Classには必ず
+Constructor Destructor CopyConstructor CopyAssignmentが必要というものだ
+
+ConstructorはClassを呼び出した際に実行される関数　主に初期化などを担当することが多い
+DestructorはClassを破棄する際に実行される関数　newなどでメモリ管理されている場合deleteを担当する
+CopyConstructorはClassを宣言する際に他のClassを引き渡して呼び出す際に実行される関数
+CopyAssignmentは元あるClassに別のClassを代入した際に呼び出されるOverload
+
+Overload
+
+Overloadはすでにある関数を自分で新しく意味を書き換える手法
+例えば a = b; これらは簡易的に書いているだけで実際は裏で多くの関数が呼び出され実行されている
+そのa = bという式に新しく意味を付け替えることがCPPでは可能で　Overloadと呼ばれている
