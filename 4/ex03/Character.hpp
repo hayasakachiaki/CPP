@@ -7,8 +7,21 @@
 class	Character : public ICharacter
 {
 	private:
-		std::string	_name;
-		AMateria*	_inventory[4];
+		struct FloorNode
+		{
+			AMateria*	materia;
+			FloorNode*	next;
+		};
+
+		std::string		_name;
+		AMateria*		_inventory[4];
+		static FloorNode*	_floor;
+		static int		_characterCount;
+
+		static void		dropMateria(AMateria* materia);
+		static bool		isOnFloor(AMateria* materia);
+		static void		removeFromFloor(AMateria* materia);
+		static void		clearFloor();
 
 	public:
 		Character();
